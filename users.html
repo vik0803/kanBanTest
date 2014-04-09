@@ -1,0 +1,12 @@
+<div class="left user-wrapper">
+	<div class="user-filter">
+		<input type="search" ng-model="userSearch" class="user-filter-search" placeholder="user filter">	
+	</div>
+    <h2>Users:<span class="add-to" ng-click="showUsrAddModal();">+</span></h2>
+    <ul class="users">
+        <li ng-repeat="item in users | filter:userSearch | orderBy:'first_name'" ng-click="activateUserClass($index);" ng-class="{active: selectedUser == $index}"><em>name: </em><span>{{item.first_name}}</span>
+		<span class="users-delete" ng-click="deleteUser(item.user_id);">x</span>
+		<span class="users-edit" ng-click="showEditUserModal(item.first_name,item.user_id,item.password);">edit</span>
+        </li>
+    </ul>
+</div>

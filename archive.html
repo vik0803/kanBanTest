@@ -1,0 +1,33 @@
+<div class="archive" ng-controller="ArchiveCtrl" archiveactions>
+	<h2>Archive</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Project</th>
+				<th>Text</th>
+				<th>User</th>
+				<th>Type</th>
+				<th>Created</th>
+				<th>Started</th>
+				<th>Finished</th>
+				<th>Reason</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="item in ticketsArchive">
+				<td>{{$index}}</td>
+				<td>{{item.project_name}}</td>
+				<td class="archive-description">{{item.description}}</td>
+				<td>{{item.first_name}} </td>
+				<td>{{item.state_name}}</td>
+				<td>{{item.ticket_date}}</td>
+				<td>{{item.queue_date}}</td>
+				<td>{{item.done_date}}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="show-more remove" ng-click="showMoreFn()">show more</button>
+</div>

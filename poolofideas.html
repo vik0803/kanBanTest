@@ -1,0 +1,17 @@
+<div ng-controller="PoolofideasCtrl" class="poolofideas-projects-wrapper">
+	<div poolofideas>
+		<ul class="poolofideas-projects left">
+			<input type="text" class="portfolio-project-filter" ng-model="searchPortfolioProjects" placeholder="project filter">
+			<li ng-repeat="item in portfolioProjects | filter:searchPortfolioProjects" ng-click="activatePoolClass($index,item.project_id);" ng-class="{active: selectPoolProject == $index}">{{item.project_name}} <span class="create-ticket" ng-click="addNewTicket(item.project_id);" ng-class="{displayAddNtkBtn: selectPoolProject == $index}">+</span></li>
+		</ul>
+		<div class="project-container"><newticket></newticket>
+			<div ng-repeat="ticket in tickets" class="{{ticket.state_name}} ticket">
+				<h2>{{ticket.project_name}} <span class="ticket-move curr-ticket-move{{$index}}" ng-click="moveTicketFn(projectId,ticket.ticket_id,$index)">&raquo;</span></h2>
+				<textarea name="ticketTextarea" class="ticketTextarea{{ticket.ticket_id}}" spellcheck="false" 
+						  ng-blur="textareaChangeFn(ticket.ticket_id,ticket.description)">{{ticket.description}}</textarea>
+				<input type="hidden" name="tktPrjctId" value="{{projectId}}">
+				<span class="ticket-action">{{ticket.ticket_date}}<small class="delete-ticket" ng-click="deleteTicketFn(ticket.ticket_id,projectId)">X</small></span>
+			</div>
+		</div>
+	</div poolofideas>
+</div>

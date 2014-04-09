@@ -1,0 +1,13 @@
+<login>
+	<div ng-controller="LoginCtrl" login>
+		<h2>Login</h2>
+		<form ng-submit="submitLogin(loginName,loginPass)" id="login" class="clear">
+			<div><label>Name:</label> <input name="name" type="text" ng-model="loginName"></div>
+			<div>
+				<label>Password:</label> <input name="password" type="password" ng-model="loginPass">
+				<p ng-class="{error: activateError}" ng-show ="activateError">Your name or password is incorrect</p>
+			</div>
+			<input type="submit" id="submit" value="submit" />
+		</form>
+	</div>
+</login>

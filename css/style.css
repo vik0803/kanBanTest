@@ -1,0 +1,728 @@
+/*=================================================================
+    FONTS
+  ===============================================================*/
+@font-face {
+    font-family: "entypo";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../font/Entypo @font-face/entypo.eot?#iefix") format("embedded-opentype"), 
+         url("../font/Entypo @font-face/entypo.woff") format("woff"), 
+         url("../font/Entypo @font-face/entypo.ttf") format("truetype"), 
+         url("../font/Entypo @font-face/entypo.svg#entypo") format("svg");
+}
+
+/*=================================================================
+    COMMON
+  ===============================================================*/
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin-top: 100px;
+	font-family: arial, sans-serif;
+	background: #f8f8f8;
+}
+
+
+.visible {
+    display: block;
+}
+
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+    float: right;
+}
+
+.error {
+    color: red;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.remove {
+    display: none;
+}
+
+.add-to {
+    border: 2px solid;
+    border-radius: 60%;
+    color: #6dab4d;
+    cursor: pointer;
+    float: right;
+    font-size: 21px;
+    line-height: 17px;
+    margin: 3px;
+    margin-top: 4px;
+    text-align: center;
+    width: 17px;
+}
+
+h2 {
+    margin-bottom: 0;
+	border-bottom: 3px solid #888;
+    color: #666;
+    padding-bottom: 5px;
+    font-size: 22px;
+}
+
+.main-content {
+    padding: 0 14px;
+    height: 100%;
+}
+
+/*=================================================================
+    HEADER
+  ===============================================================*/
+header {
+    position: absolute;
+    width: 100%;
+    border-bottom: 8px solid #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    height: 40px;
+    left: 0;
+    padding-bottom: 5px;
+    padding-top: 20px;
+    top: 0;
+    background: none repeat scroll 0 0 #f8f8f8;
+    z-index: 2;
+}
+
+header h2 {
+    margin: 0;
+    border: none;
+}
+
+header a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #888;
+    font: 22px/22px arial, sans-serif;
+}
+
+header .user-nav a:hover,
+header .main-nav a:hover,
+header .main-nav .active {
+    color: #00a0d6;
+    /*border-bottom: 1px dotted #00a0d6;*/
+}
+
+.user-nav img {
+    border: 3px solid #fff;
+    float: left;
+    margin-top: -16px;
+    outline: 1px solid #e3e9ef;
+}
+
+header .main-nav {
+    margin: 0 50px;
+}
+
+.upload-file {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #555;
+    margin: 0 10px 25px;
+    padding: 4px 0 0;
+    width: 280px;
+}
+
+.upload-file label {
+    padding: 0 0 0 5px;
+    font-size: 22px;
+    color: #737373;
+}
+
+#file_upload {
+    font-size: 14px;
+    width: 200px;
+}
+/*=================================================================
+    CONTENT
+  ===============================================================*/
+.content-wrapper,  
+.main-content {
+    height: 100%;
+}
+
+/*=================================================================
+    LOGIN
+  ===============================================================*/
+login {
+    width: 300px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin-top: -100px;
+    margin-left: -123px;
+    padding: 15px 30px;
+    top: 40%;
+    left:45%;
+    position: absolute;
+    border: 8px solid #fff;
+}
+
+login h2 {
+    border: none;
+    padding: 0;
+}
+
+
+login label {
+    display: inline-block;
+    width: 100px;
+}
+
+login p {
+    margin: 0;
+}
+
+login input[type=submit] {
+    margin: 10px 0;
+}
+
+/*=================================================================
+    ADMIN
+  ===============================================================*/
+.admin-content-wrapper.clear {
+    display: block;
+    margin: 0 auto;
+    width: 670px;
+}
+
+projects {
+    display: inline-block;
+    width: 400px;
+}
+
+.user-wrapper,
+.projects-wrapper {
+    min-width: 180px;
+}
+
+.projects {
+	list-style: disc inside none;
+	margin-top: 10px;
+    padding: 0;
+}
+
+
+.users {
+	list-style: none;
+	margin-top: 10px;
+    padding: 0;
+}
+
+.user-filter-search {
+    width: 95%;
+}
+
+.projects li,
+.users li {
+	font: 22px/22px arial, sans-serif;
+    background: none repeat scroll 0 0 #00bfff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 1px;
+    padding: 10px;
+    -webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+	text-transform: capitalize;
+}
+
+.projects li:hover {
+	background: #00a0d6;
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+	    -ms-transition: all .5s;
+	     -o-transition: all .5s;
+	        transition: all .5s;
+}
+
+.projects li.active {
+	background: #00a0d6;
+}
+
+em {
+	font-size: 16px;
+	color: #eee;
+	text-transform: lowercase;
+	font-style: normal;
+}
+
+.users li {
+	background: #00a0d6;
+}
+
+.users li:hover,
+.users li.active {
+	background: #007ca5;
+}
+.user-settings {
+	margin: 10px 40px;
+	list-style: none;
+}
+
+
+.left.settings-wrapper > h2 {
+    width: 478px;
+}
+
+.user-settings input {
+    font-size: 23px;
+    margin-right: 20px;
+    padding: 6px;
+    width: 130px;
+}
+
+.user-settings {
+	font-size: 19px;
+}
+.user-settings label:nth-child(1) input {
+	text-transform: capitalize;
+}
+
+.user-settings label:nth-child(2) input,
+.user-settings label:nth-child(3) input {
+    width: 40px;
+    text-align: center;
+}
+
+.delete-user {
+    color: #d11430;
+    font-weight: bold;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/*=================================================================
+    MODAL
+  ===============================================================*/
+.modal-wrapper {
+    width: 300px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin-top: -100px;
+    margin-left: -123px;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    border: 8px solid #fff;
+    background: #f8f8f8;
+    z-index: 300;
+}
+
+.modal-wrapper.editAccForm-wrapper {
+    margin-top: -200px;
+}
+
+login h2,
+.modal-wrapper h2 {
+    font-size: 25px;
+    border: medium none;
+    margin-top: 0;
+    margin-bottom: 35px;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-wrapper form {
+    padding: 28px 0;
+}
+
+login input,
+.portfolio-project-filter,
+.user-filter-search,
+.prj-filter-search,
+.modal-wrapper input {
+    font-size: 23px;
+    padding: 6px;
+    width: 130px;
+}
+
+.portfolio-project-filter,
+.user-filter-search,
+.prj-filter-search,
+input[type=text],
+input[type=password]  {
+    border: 1px solid #555;
+}
+
+#login > input {
+    float: right;
+}
+
+login input[type=text],
+login input[type=password] {
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+.user-filter-search,
+.prj-filter-search {
+    width: 96%;
+}
+
+.modal-wrapper input[type=text],
+.modal-wrapper input[type=password] {
+    display: block;
+    font-size: 23px;
+    margin: 0 auto 30px;
+    padding: 6px;
+    width: 270px;
+}
+
+.modal-wrapper input[type=text].user-name {
+    margin-bottom: 15px;
+}
+
+.modal-wrapper input[type=submit],
+.modal-wrapper input[type=button] {
+    margin: 0 10px;
+}
+
+.users-edit,
+.project-edit {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    font-size: 0;
+    overflow: hidden;
+    text-shadow: none;
+    line-height: 0;
+    background: url('../img/Editing-Edit-icon.png') 0 0 no-repeat;
+}
+
+.users-edit,
+.users-delete,
+.project-edit,
+.project-delete {
+    float: right;
+    margin-left: 6px;
+}
+
+.users-delete,
+.project-delete {
+    line-height: 20px;
+}
+
+/*=================================================================
+    POOL OF IDEAS
+  ===============================================================*/
+.poolofideas-projects-wrapper {
+    height: 100%;
+}
+
+.poolofideas-projects-wrapper > div {
+    height: 100%;
+    position: relative;
+    top: -70px;
+    left: -21px;
+    z-index: 1;
+}
+
+.poolofideas-projects {
+    padding: 70px 0 0;
+    min-width: 250px;
+    height: 100%;
+    list-style: decimal inside none;
+    background: #eee;
+}
+
+.poolofideas-projects li {
+    margin-bottom: 1px;
+    padding: 10px 10px 10px 20px;
+    background: none repeat scroll 0 0 #00a0d6;
+    color: #fff;
+    cursor: pointer;
+    font: 22px/22px arial,sans-serif;
+    text-transform: capitalize;
+    transition: all 0.2s ease 0s;
+}
+
+.poolofideas-projects li:hover,
+.poolofideas-projects li.active {
+    background: #007ca5;
+}
+
+.create-ticket {
+    /*border: 2px solid;*/
+    display: none;
+    border-radius: 60%;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-size: 21px;
+    line-height: 17px;
+    margin: 4px 3px 3px;
+    text-align: center;
+    width: 17px;
+}
+
+.create-ticket.displayAddNtkBtn {
+    display: block;
+}
+
+newticket {
+    display: none;
+    float: left;
+    margin: 10px;
+    width: 165px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);*/
+}
+
+newticket select {
+    margin: 5px 0;
+    width: 100%;
+}
+
+newticket textarea {
+    margin: 5px 0;
+    width: 100%;
+    height: 105px;
+    resize: none;
+    overflow-y: hidden;
+    border: none; 
+    background: #f7f9fc;
+}
+
+newticket textarea:focus {
+    background: none repeat scroll 0 0 #f2f4f7;
+}
+
+.project-container {
+    position: relative;
+    margin-left: 290px;
+    /*display: inline-block;*/
+    padding: 75px 0 0;
+}
+
+/*=================================================================
+    TICKET
+  ===============================================================*/
+newticket,
+.ticket {
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #e3e9ef;
+    background: none repeat scroll 0 0 #fff;
+}
+
+newticket {
+    border-color: #e3e9ef #c2c2c2 #c2c2c2 #e3e9ef;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.ticket textarea {
+    margin: 5px 0;
+    height: 155px;
+    resize: none;
+    overflow-y: hidden; 
+    border: none;
+    background: #f7f9fc;
+}
+
+.ticket textarea:focus {
+    background: none repeat scroll 0 0 #f2f4f7;
+}
+
+.new-ticket h2,
+.ticket h2 {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.new-ticket input[type=submit] {
+    padding: 5px;
+}
+
+.ticket h2 span {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 22px;
+}
+
+.ticket h2 span:hover {
+    color: #333;
+}
+
+.portfolio-project-filter {
+    margin-bottom: 15px;
+    width: 94.5%;
+}
+
+.standart h2 {
+    border-color: #ffb051;
+}
+
+.defect h2 {
+    border-color: #ed614f;
+}
+
+.ticket-action {
+    display: block;
+    font-size: 12px;
+}
+
+.ticket-action .delete-ticket {
+    float: right;
+    color: #888;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 14px;
+    font-weight: bold;
+}
+
+.ticket-action .delete-ticket:hover {
+    color: #ce2525;
+};
+
+/*=================================================================
+    DASHBOARD
+  ===============================================================*/
+.dashboard {
+    height: 100%;
+}
+
+.dashboard {
+    height: 100%;
+}
+
+#queue > h2,
+#in-progress > h2,
+#done > h2 {
+    border: 0;
+    border: none;
+}
+
+#queue {
+    width: 44%;
+    height: 100%;
+}
+
+#queue .ticket-container {
+    height: 100%;
+}
+
+.ticket-container {
+    background: #eee;
+}
+
+#in-progress {
+    margin: 0 10px;
+}
+
+#in-progress .ticket-container {
+    display: none;
+}
+
+#in-progress ul {
+    width: 460px;
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.ticket-action .date {
+    margin-right: 10px;
+}
+
+#in-progress ul li {
+    position: relative;
+}
+
+#in-progress ul li .user-header {
+    background: none repeat scroll 0 0 #00a0d6;
+    color: #fff;
+    cursor: pointer;
+    font: 22px/22px arial,sans-serif;
+    margin-bottom: 1px;
+    padding: 10px 10px 10px 20px;
+    text-transform: capitalize;
+    transition: all 0.2s ease 0s;
+    border-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    text-indent: 20px;
+    width: 430px;
+}
+
+#in-progress ul li:first-of-type div {
+    display: block;
+}
+
+#in-progress ul li:before {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    /*content: '\1F464';   how to use without data-icon just remove U+ and add \*/
+    content: attr(data-icon);
+    color: #fff;
+    font-family: "entypo";
+    font-size: 37px;
+    z-index: 1;
+}
+
+#done {
+    height: 100%;
+    width: 30%;
+}
+
+#done .ticket-container {
+    height: 100%;
+}
+
+#done .ticket-action .date {
+    margin-right: 7px;
+}
+
+/*=================================================================
+    ARCHIVE
+  ===============================================================*/
+.archive table {
+    width: 100%;
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #e3e9ef;
+}
+
+.archive table th,td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e3e9ef;
+}
+
+.archive table thead {
+    color: #fff;
+    background: #888;
+}
+
+.archive h2 {
+    border: none;
+}
+
+.archive-description {
+    font-style: italic;
+}
+

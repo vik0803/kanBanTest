@@ -1,0 +1,12 @@
+<div class="left projects-wrapper">
+	<div class="project-filter">
+		<input type="search" ng-model="search" class="prj-filter-search" placeholder="project filter" ng-focus="selectedProject = null">	
+	</div>
+    <h2>Projects:<span class="add-to" ng-click="showModal();addProject()">+</span></h2>
+    <ul class="projects">
+        <li ng-repeat="item in projects | filter:search | orderBy:'project_name'" ng-click="activateClass($index);" ng-class="{active: selectedProject == $index}" id="{{$index}}">{{item.project_name}}
+			<span class="project-delete" ng-click="deleteProject(item.project_id)">x</span>
+			<span class="project-edit" ng-click="showEditModal(item.project_name,item.project_id)">edit</span>
+        </li>
+    </ul>
+</div>

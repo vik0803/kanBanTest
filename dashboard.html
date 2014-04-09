@@ -1,0 +1,57 @@
+<div ng-controller="Dashboard" class="clear dashboard" dashboard>
+	<div id="queue" class="left">
+		<h2>Queue</h2>
+
+		<div class="ticket-container clear">
+			<div ng-repeat="ticket in tickets | orderBy:'project_name'" class="{{ticket.state_name}} ticket">
+				<h2>{{ticket.project_name}} <span class="ticket-move curr-ticket-move{{ticket.ticket_id}}" ng-click="moveTicketDashboardFn(ticket.project_id,ticket.ticket_id,$index)">&raquo;</span></h2>
+				<textarea name="ticketTextarea" class="ticketTextarea{{ticket.ticket_id}}" spellcheck="false" 
+						  ng-blur="textareaChangeFn(ticket.ticket_id,ticket.description)">{{ticket.description}}</textarea>
+				<input type="hidden" name="tktPrjctId" value="{{ticket.project_id}}">
+				<span class="ticket-action"><small>{{ticket.ticket_date}}</small><small class="delete-ticket" ng-click="deleteDashboardTicketFn(ticket.ticket_id)">X</small></span>
+			</div>
+		</div>
+	</div>
+
+	<div id="in-progress" class="left">
+		<h2>In Progress</h2>
+					
+		<ul>
+	        <li ng-repeat="item in users | filter:userSearch | orderBy:'first_name'" 
+	            ng-click="activateUserClass($index);" 
+	            ng-class="{active: selectedUser == $index, 'cur-user-active': curUserActive == item.user_id}"
+	            data-icon="&#128100;">
+
+	            <h2 class="user-header">{{item.first_name}}</h2>
+	            <div class="ticket-container clear">
+
+	            	<div ng-if="item.user_id == prgTicket.ticket_user_id" ng-repeat="prgTicket in prgTickets | orderBy:'project_name'" class="{{prgTicket.state_name}} ticket">
+						<h2>{{prgTicket.project_name}} <span class="ticket-move curr-ticket-move{{prgTicket.ticket_id}}" ng-click="moveTicketDoneFn(prgTicket.project_id,prgTicket.ticket_id,$index)">&raquo;</span></h2>
+						<textarea name="ticketTextarea" class="ticketTextarea{{prgTicket.ticket_id}}" spellcheck="false" 
+								  ng-blur="textareaChangeFn(prgTicket.ticket_id,prgTicket.description)">{{prgTicket.description}}</textarea>
+						<input type="hidden" name="tktPrjctId" value="{{prgTicket.project_id}}">
+						<span class="ticket-action"><small class="date">{{prgTicket.ticket_date}}</small><small class="date">{{prgTicket.queue_date}}</small> <small class="delete-ticket" ng-click="deleteInPrgrsTicketFn(prgTicket.ticket_id)">X</small></span>
+					</div>
+
+				</div>
+	        </li>
+	    </ul>
+	</div>
+	<div id="done" class="left">
+		<h2>Done</h2>
+
+        <div class="ticket-container clear">
+            <div ng-repeat="ticketDone in ticketsDone | orderBy:'project_name'" class="{{ticketDone.state_name}} ticket">
+                <h2>{{ticketDone.project_name}} <span class="ticket-move curr-ticket-move{{ticketDone.ticket_id}}" ng-click="moveTicketArchiveFn(ticketDone.project_id,ticketDone.ticket_id,$index)">&raquo;</span></h2>
+                <textarea name="ticketTextarea" class="ticketTextarea{{ticketDone.ticket_id}}" spellcheck="false"
+                          ng-blur="textareaChangeFn(ticketDone.ticket_id,ticketDone.description)">{{ticketDone.description}}</textarea>
+                <input type="hidden" name="tktPrjctId" value="{{ticketDone.project_id}}">
+                <span class="ticket-action">
+                	<small class="date">{{ticketDone.ticket_date}}</small>
+                	<small class="date">{{ticketDone.queue_date}}</small>
+                	<small class="date">{{ticketDone.done_date}}</small>
+                	<small class="delete-ticket" ng-click="deleteDoneTicketFn(ticketDone.ticket_id)">X</small></span>
+            </div>
+        </div>
+	</div>
+</div>

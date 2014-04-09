@@ -1,0 +1,16 @@
+<div class="new-ticket">
+	<form action="" id="create-new-ticket" ng-submit="submitNewTicket(projectId);">
+		<h2>New ticket</h2>
+		<div class="new-ticket-content">
+			<textarea name="description" ng-model="newTicketTextarea"></textarea>	
+			<select name="state" id="">
+				<option ng-repeat="state in ticketStates" value="{{state.state_id}}">{{state.state_name}}</option>
+			</select>
+			<input type="hidden" name="prjctId" value="{{projectId}}">
+			<input type="hidden" name="tktPstn" value="1">
+		</div>
+		<footer>
+			<input type="submit" value="submit">
+		</footer>
+	</form>
+</div>

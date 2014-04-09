@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="project">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Project</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="js/helpers.js"></script>
+        <script src="http://code.angularjs.org/1.2.10/angular.min.js"></script>
+        <script src="http://code.angularjs.org/1.2.10/angular-route.min.js"></script>
+    </head>
+    <body>
+
+           <div ng-controller="ProjectCntr" class="clear main-content">
+
+            <header class="clear" ng-show="isLogged" ng-controller="Navigation">
+                <a href="#" class="left" class="logo"><h2>Projects</h2></a>
+                <div class="main-nav left">
+                    <a href="#/dashboard" active-link="active">dashboard</a>
+                    <a href="#/poolofideas" active-link="active">pool of ideas</a>
+                    <a href="#/project" active-link="active">admin</a>
+                    <a href="#/portfolio" active-link="active">portfolio</a>
+                    <a href="#/metrics" active-link="active">metrics</a>
+                </div>
+                
+                <div class="user-nav right clear">
+                    <img ng-src="{{userIcon}}" width=50 height=50>
+                    <a href ng-click="editAccFn()" edit-acc>edit</a>
+                    <a href="#/archive">archive</a>
+                    <a href="#/login" ng-click="logoutFn()">logout</a>
+                </div>
+            </header>
+
+                <div class="content-wrapper" ng-view></div>
+           </div>
+           
+        <script src="js/main.js"></script>
+        
+        <!-- services -->
+        <script src="js/services/projects-service.js"></script>
+        <script src="js/services/users-service.js"></script>
+        <script src="js/services/ticket-service.js"></script>
+        <script src="js/services/login-service.js"></script>
+        <script src="js/services/modal.js"></script>
+        
+        <!-- controllers -->
+        <script src="js/controllers/admin-controller.js"></script>
+        <script src="js/controllers/dashboard-controller.js"></script>
+        <script src="js/controllers/navigation-controller.js"></script>
+        <script src="js/controllers/poolofideas-controller.js"></script>
+        <script src="js/controllers/portfolio-controller.js"></script>
+        <script src="js/controllers/archive-controller.js"></script>
+
+ 
+        <!-- directives -->
+        <script src="js/directive/projects.js"></script>
+        <script src="js/directive/users.js"></script>
+        <script src="js/directive/login.js"></script>
+        <script src="js/directive/poolofideas-directive.js"></script>
+        <script src="js/directive/dashboard-directive.js"></script>
+        <script src="js/directive/header-directive.js"></script>
+        <script src="js/directive/archive-directive.js"></script>
+    </body>
+</html>
