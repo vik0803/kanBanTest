@@ -247,7 +247,6 @@ angular.module('project')
 
                 }).success(function (data, status, headers, config) {
                     scope.ticketsArchive = data.tickets;
-                    $('.show-remove').removeClass('remove');
                     if (data.limit.to > data.limit.size) {
                     	$('.show-more').addClass('remove');
                     };

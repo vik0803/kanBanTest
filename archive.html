@@ -21,13 +21,20 @@
 				<td>{{item.project_name}}</td>
 				<td class="archive-description">{{item.description}}</td>
 				<td>{{item.first_name}} </td>
-				<td>{{item.state_name}}</td>
+				<td class="{{item.state_name}}">{{item.state_name}}</td>
 				<td>{{item.ticket_date}}</td>
 				<td>{{item.queue_date}}</td>
 				<td>{{item.done_date}}</td>
 				<td></td>
 			</tr>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="9">
+					<button class="show-more" ng-click="showMoreFn()">show more</button>
+				</td>
+			</tr>
+		</tfoot>
 	</table>
-	<button class="show-more remove" ng-click="showMoreFn()">show more</button>
+	<img src="img/ajax-loader.gif" alt="loader" class="loader">
 </div>

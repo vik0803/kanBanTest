@@ -19,11 +19,10 @@ directive('archiveactions', ['ticketsXhr', function(ticketsXhr){
 		link: function($scope, iElm, iAttrs, controller) {
 				ticketsXhr.archiveTickets($scope,1);
 				var pageNumber = 1;
-				$('.show-remove').removeClass('remove'); 
-				console.log($('.show-remove'))
+
 				$scope.showMoreFn = function () {
 					pageNumber++; 
-					ticketsXhr.archiveTickets($scope,pageNumber);
+					ticketsXhr.archiveTickets($scope,pageNumber);	
 				} 
 		}
 	};

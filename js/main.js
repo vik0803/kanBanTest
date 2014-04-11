@@ -1,8 +1,23 @@
 'use strict';
 
 angular.module('project',['ngRoute'])
-	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	.config(['$routeProvider', '$locationProvider', '$httpProvider',function($routeProvider, $locationProvider, $httpProvider) {
   // $locationProvider.html5Mode(true);
+
+  //interceptor for spinner loading
+  $httpProvider.interceptors.push(function($q) {
+        return {
+         'request': function(config) {
+            $('.loader').show();
+            return config || $q.when(config);
+          },
+          'response': function(response) {
+            $('.loader').hide();
+            return response || $q.when(response);
+          }
+        }
+  });
+
 	$routeProvider
 		.when('/login', {
 			templateUrl: 'login.html'
@@ -53,6 +68,4 @@ angular.module('project',['ngRoute'])
   .controller('LoginCtrl',['$scope','loginXhr',function ($scope,loginXhr){
   }])
   .controller('UsersCtrl', ['$scope', function ($scope) {
-  }]);
-
-	
+  }]);	

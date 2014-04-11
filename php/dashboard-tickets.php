@@ -216,7 +216,7 @@ if (isset($_GET['action'])) {
 
         case 'archivetickets':
 
-        	$pageSize = 10;
+        	$pageSize = 11;
         	$pageNumber = $_GET['pageNumber']; 
         	$from = ($pageNumber - 1) * $pageSize;   
 			$to = $pageNumber * $pageSize;
