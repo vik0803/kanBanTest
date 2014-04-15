@@ -678,6 +678,7 @@ newticket {
     top: -8px;
     left: 10px;
     /*content: '\1F464';   how to use without data-icon just remove U+ and add \*/
+    text-shadow: 1px 1px 0 #000000;
     content: attr(data-icon);
     color: #fff;
     font-family: "entypo";

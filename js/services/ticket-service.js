@@ -261,6 +261,10 @@ angular.module('project')
 				});
 
 				return promise;
+			},
+
+			ticketsXhrAll: function () {
+				return $http.get('../../php/tickets.php?action=morrisinfo');
 			}
 		};
 	}])

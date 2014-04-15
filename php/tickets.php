@@ -85,6 +85,20 @@ if(isset($_GET['action']))
 			$data = array('tickets' => $temp);
 			echo json_encode($data);
 		break;
+
+		case 'morrisinfo':
+			$result = mysql_query('SELECT * FROM tickets');
+			$temp = array();
+
+			while($row = mysql_fetch_assoc($result))
+			{
+			    $temp[] = $row;
+			}
+
+			$data = array('tickets' => $temp);
+			echo json_encode($data);
+		break;
 	}
 } 
+
 ?>
